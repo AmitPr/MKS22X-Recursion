@@ -23,9 +23,16 @@ public class recursion{
      *fib(0) = 1; fib(1) = 1; fib(5) = 5
      *precondition: n is non-negative
      */
-    public static int fib(int n){
+    public static int fib(int n) {
+		return fibHelper(n - 2, 1, 0);
+	}
 
-    }
+	public static int fibHelper(int n, int last, int last2) {
+		if (n <= 0){
+			return last + last2;
+		}
+		return fibHelper(n - 1, last + last2, last);
+	}
 
     /*As Per classwork*/
     public static ArrayList<Integer> makeAllSums(){
