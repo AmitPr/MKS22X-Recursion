@@ -11,7 +11,7 @@ public class recursion{
 			return 0;
 		return sqrtHelper (n, 1, tolerance);
 	}
-	public static double sqrtHelper(double n, double current, double tolerance){
+	private static double sqrtHelper(double n, double current, double tolerance){
 		current = ( (n / current) + current) / 2;
 		if (Math.abs(((current * current) - n)) < tolerance)
 			return current;
@@ -33,7 +33,7 @@ public class recursion{
 		return fibHelper(n - 2, 1, 0);
 	}
 
-	public static int fibHelper(int n, int last, int last2) {
+	private static int fibHelper(int n, int last, int last2) {
 		if (n <= 0){
 			return last + last2;
 		}
@@ -45,12 +45,12 @@ public class recursion{
 		ArrayList<Integer> sums = new ArrayList<Integer>();
 		return makeAllHelper(n,0,sums);
 	}
-	public static ArrayList<Integer> makeAllHelper(int n, int curSum, ArrayList<Integer> sums) {
+	private static ArrayList<Integer> makeAllHelper(int n, int curSum, ArrayList<Integer> sums) {
 		if (n < 1){
 			sums.add(curSum);
 		}else{
-			sums.addAll(makeAllHelper(n-1,curSum + n, sums));
-			sums.addAll(makeAllHelper(n-1,curSum, sums));
+			makeAllHelper(n-1,curSum + n, sums);
+			makeAllHelper(n-1,curSum, sums);
 		}
 		return sums;
 	}
