@@ -24,6 +24,12 @@ public class recursion{
      *precondition: n is non-negative
      */
     public static int fib(int n) {
+		if (n == 0) {
+			return 0;
+		}
+		if (n < 2) {
+			return 1;
+		}
 		return fibHelper(n - 2, 1, 0);
 	}
 
