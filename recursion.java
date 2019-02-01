@@ -41,7 +41,18 @@ public class recursion{
 	}
 
     /*As Per classwork*/
-    public static ArrayList<Integer> makeAllSums(){
-    }
+    public static ArrayList<Integer> makeAllSums(int n){
+		ArrayList<Integer> sums = new ArrayList<Integer>();
+		return makeAllHelper(n,0,sums);
+	}
+	public static ArrayList<Integer> makeAllHelper(int n, int curSum, ArrayList<Integer> sums) {
+		if (n < 1){
+			sums.add(curSum);
+		}else{
+			sums.addAll(makeAllHelper(n-1,curSum + n, sums));
+			sums.addAll(makeAllHelper(n-1,curSum, sums));
+		}
+		return sums;
+	}
 
 }
