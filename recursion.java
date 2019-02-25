@@ -1,10 +1,10 @@
+import java.util.ArrayList;
 public class recursion{
     /*You may write additional private methods */
 
     /*Recursively find the sqrt using Newton's approximation
      *tolerance is the allowed percent error the squared answer is away from n.
      *precondition: n is non-negative
-
     */
 	public static double sqrt(double n, double tolerance){
 		if (n == 0)
